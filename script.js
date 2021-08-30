@@ -18,6 +18,5 @@ async function showPosition(position) {
   let data = await response.json()
   document.getElementById("result").innerText == data.data
   console.log(data.data)
-
-  // document.getElementById("Day") == "Date: " + date.getDate() + date.getMonth() + date.getFullYear()
+  document.getElementById("Day").innerText == "Date: " + date.getDate() + date.getMonth() + date.getFullYear()
 }
