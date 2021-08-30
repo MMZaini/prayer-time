@@ -10,6 +10,7 @@ async function prayerTimes() {
 
 // https://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=0&month=4&year=2017
 
+// gets the latitude and longitude of the user
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -29,3 +30,6 @@ async function showPosition(position) {
   let timings = data.data.day.timings
   document.getElementById("result") = timings
 }
+
+// asks users for location when site is loaded
+getLocation()
