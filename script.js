@@ -25,3 +25,5 @@ async function showPosition(position) {
   console.log(dayData['timings'])
   document.getElementById("Day").innerText = "Date: " + date.toLocaleDateString()
 }
+
+getLocation()
