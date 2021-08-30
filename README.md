@@ -1,2 +1,5 @@
 # prayer-time
-- twelver shia prayer times site
+- Twelver shia prayer times site
+
+# features to add
+- Next and Previous day
