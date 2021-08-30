@@ -1,2 +1,2 @@
 # prayer-time
-- twelver prayer times site
+- twelver shia prayer times site
