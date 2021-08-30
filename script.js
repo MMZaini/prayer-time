@@ -14,6 +14,7 @@ function getLocation() {
   }
 }
 
+// gets location of user and shows result
 async function showPosition(position) {
   let date = new Date();
   let day = parseInt(date.getDate()) - 1
