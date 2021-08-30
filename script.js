@@ -3,7 +3,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by your browser.";
+    window.alert("Geolocation is not supported by your browser.")
   }
 }
 
@@ -16,9 +16,12 @@ async function showPosition(position) {
   let url = "https://api.aladhan.com/v1/calendar?latitude=" + latitude + "&longitude=" + longitude + "&method=0&month=" + date.getMonth() + "&year=" + date.getFullYear()
   let response = await fetch(url);
   let data = await response.json()
-  let dayData = data.data["day"]
-  document.getElementById("result").innerText == dayData
-  console.log(dayData)
-  console.log(data.data)
-  document.getElementById("Day").innerText == "Date: " + date.getDate() + date.getMonth() + date.getFullYear()
+  let dayData = data.data[day]
+  document.getElementById("result").innerText = "";
+  for (const key of Object.entries(dayData['timings'])) {
+    document.getElementById("result").innerHTML += key + "<br/>"
+  }
+   
+  console.log(dayData['timings'])
+  document.getElementById("Day").innerText = "Date: " + date.toLocaleDateString()
 }
