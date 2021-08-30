@@ -19,7 +19,7 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
+async function showPosition(position) {
   let year = new Date();
   let month = new Date();
   let latitude = position.coords.latitude
