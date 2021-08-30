@@ -10,7 +10,6 @@ async function prayerTimes() {
 
 // https://api.aladhan.com/v1/calendar?latitude=51.508515&longitude=-0.1254872&method=0&month=4&year=2017
 
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -20,12 +19,13 @@ function getLocation() {
 }
 
 async function showPosition(position) {
-  let year = new Date();
-  let month = new Date();
+  let date = new Date();
+  let day = parseInt(date.getDate()) - 1
   let latitude = position.coords.latitude
   let longitude = position.coords.longitude
-  let url = "https://api.aladhan.com/v1/calendar?latitude=" + latitude + "&longitude=" + longitude + "&method=0&month=" + month.getMonth() + "&year=" + year.getFullYear()
+  let url = "https://api.aladhan.com/v1/calendar?latitude=" + latitude + "&longitude=" + longitude + "&method=0&month=" + date.getMonth() + "&year=" + date.getFullYear()
   let response = await fetch(url);
   let data = await response.json()
-  console.log(data)
+  let timings = data.data.day.timings
+  document.getElementById("result") = timings
 }
