@@ -27,8 +27,7 @@ async function showPosition(position) {
   let url = "https://api.aladhan.com/v1/calendar?latitude=" + latitude + "&longitude=" + longitude + "&method=0&month=" + date.getMonth() + "&year=" + date.getFullYear()
   let response = await fetch(url);
   let data = await response.json()
-  let timings = data.data.day
-  document.getElementById("result") = timings
+  document.getElementById("result") = data.data.day
 }
 
 // asks users for location when site is loaded
