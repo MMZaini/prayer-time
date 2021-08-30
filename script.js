@@ -25,5 +25,7 @@ function showPosition(position) {
   let latitude = position.coords.latitude
   let longitude = position.coords.longitude
   let url = "https://api.aladhan.com/v1/calendar?latitude=" + latitude + "&longitude=" + longitude + "&method=0&month=" + month.getMonth() + "&year=" + year.getFullYear()
-  console.log(url)
+  let response = await fetch(url);
+  let data = await response.json()
+  console.log(data)
 }
