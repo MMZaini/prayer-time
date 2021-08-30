@@ -19,5 +19,6 @@ async function showPosition(position) {
   let dayData = data.data["day"]
   document.getElementById("result").innerText == dayData
   console.log(dayData)
+  console.log(data.data)
   document.getElementById("Day").innerText == "Date: " + date.getDate() + date.getMonth() + date.getFullYear()
 }
