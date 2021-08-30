@@ -21,7 +21,7 @@ async function showPosition(position) {
   for (const key of Object.entries(dayData['timings'])) {
     document.getElementById("result").innerHTML += key + "<br/>"
   }
-   
+
   console.log(dayData['timings'])
   document.getElementById("Day").innerText = "Date: " + date.toLocaleDateString()
 }
